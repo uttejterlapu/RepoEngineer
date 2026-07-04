@@ -1,4 +1,3 @@
-```md id="3yt2jv"
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
@@ -90,4 +89,3 @@ This Code of Conduct is adapted from the Contributor Covenant, version 2.1.
 For more information, visit:
 
 https://www.contributor-covenant.org/version/2/1/code_of_conduct/
-```
