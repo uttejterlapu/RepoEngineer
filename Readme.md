@@ -72,3 +72,15 @@
 ## Status
 
 🚧 Under active development.
+
+## 🤝 Contributing
+
+RepoEngineer is an open-source project, and contributions of all sizes are welcome!
+
+Whether you're fixing bugs, improving documentation, adding new agents, or proposing new ideas, your help is appreciated.
+
+If you're new to open source, check out the issues labeled **good first issue**.
+
+We'd love to build the future of AI Software Engineering together.
+
+⭐ If you find this project useful, consider starring the repository.
