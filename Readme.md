@@ -1,86 +1,291 @@
-# RepoEngineer
+# 🤖 RepoEngineer
 
-🤖 **RepoEngineer** is an AI-powered software engineering agent that analyzes repositories, plans code changes, generates implementations, validates them, and automatically creates GitHub Pull Requests.
+> An open-source AI Software Engineer that analyzes repositories, plans changes, writes code, validates implementations, and creates GitHub Pull Requests using LangGraph and LLMs.
 
-## Features
+---
 
-- 🧠 Intelligent task planning
-- 📂 Repository analysis
-- 🔍 Context-aware code retrieval
-- 💻 AI-powered code generation
-- 👀 Automated code review
-- ✅ Build, lint, and test validation
-- 🌿 Git branch management
-- 🔀 Automated Pull Request creation
-- ⚡ Workflow orchestration with LangGraph
+## 🚀 Overview
 
-## Architecture
+RepoEngineer is an open-source AI Software Engineer built to automate software development workflows.
 
-```                    
-                    User
-                      │
-                      ▼
-              Planner Agent
-                      │
-                      ▼
-        Repository Analyzer Agent
-                      │
-                      ▼
-         Context Retrieval Agent
-                      │
-                      ▼
-              Coding Agent
-                      │
-                      ▼
-             Reviewer Agent
-          ┌──────────┴──────────┐
-          │                     │
-      Changes needed         Approved
-          │                     │
-          ▼                     ▼
-     Coding Agent        Validation Agent
-                                │
-                    ┌───────────┴───────────┐
-                    │                       │
-                 Failed                  Passed
-                    │                       │
-                    ▼                       ▼
-              Debug Agent          Test Generation Agent
-                    │                       │
-                    ▼                       ▼
-              Coding Agent      Documentation Agent
-                    │                       │
-                    └───────────┬───────────┘
-                                ▼
-                           Git Agent
-                                │
-                                ▼
-                          Pull Request Agent
-                                │
-                                ▼
-                          GitHub Pull Request```
+Instead of relying on a single prompt, RepoEngineer breaks software engineering into specialized AI agents coordinated by **LangGraph**. Each agent has a focused responsibility, making the system modular, maintainable, and extensible.
 
-## Tech Stack
+The long-term vision is to build an autonomous software engineer capable of understanding an existing codebase, implementing requested features, validating changes, and opening production-ready GitHub Pull Requests.
+
+---
+
+## ✨ Features
+
+### Current
+
+- ✅ Planner Agent
+- ✅ Structured outputs using Pydantic
+- ✅ LangGraph workflow orchestration
+- ✅ GitHub Models integration
+- ✅ Multi-agent architecture
+
+### Coming Soon
+
+- 🚧 Repository Analyzer
+- 🚧 Context Retrieval
+- 🚧 Coding Agent
+- 🚧 Code Reviewer
+- 🚧 Validation Agent
+- 🚧 Git Integration
+- 🚧 Automated Pull Request Creation
+- 🚧 Repository Memory
+- 🚧 Multi-LLM Support
+- 🚧 MCP Integration
+
+---
+
+# 🏗 Architecture
+
+```text
+                   User
+                     │
+                     ▼
+             LangGraph Workflow
+                     │
+     ┌───────────────┼────────────────┐
+     ▼               ▼                ▼
+ Planner      Repository Analyzer   Retriever
+     │               │                │
+     └───────────────┼────────────────┘
+                     ▼
+               Coding Agent
+                     │
+                     ▼
+              Review Agent
+                     │
+                     ▼
+            Validation Agent
+                     │
+                     ▼
+          Git & Pull Request Agent
+```
+
+---
+
+# 🧠 Agent Workflow
+
+1. Planner Agent
+   - Understands the user's request.
+   - Creates an implementation plan.
+
+2. Repository Analyzer
+   - Understands the repository structure.
+   - Detects frameworks, languages, and tooling.
+
+3. Context Retriever
+   - Finds only the relevant files and code.
+
+4. Coding Agent
+   - Generates code patches.
+
+5. Review Agent
+   - Reviews generated code for quality and correctness.
+
+6. Validation Agent
+   - Runs builds, tests, linting, and type checks.
+
+7. GitHub PR Agent
+   - Commits changes and creates a Pull Request.
+
+---
+
+# 🛠 Tech Stack
 
 - Python
 - LangGraph
-- OpenAI / GitHub Models
 - Pydantic
-- GitPython
-- GitHub API
+- OpenAI SDK
+- GitHub Models
+- GitPython *(planned)*
+- Tree-sitter *(planned)*
+- pytest
 
-## Status
+---
 
-🚧 Under active development.
+# 📂 Project Structure
 
-## 🤝 Contributing
+```text
+RepoEngineer/
+│
+├── app/
+│   ├── agents/
+│   ├── graph/
+│   ├── llm/
+│   ├── models/
+│   ├── prompts/
+│   ├── detectors/
+│   └── tools/
+│
+├── tests/
+├── docs/
+├── examples/
+│
+├── README.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── ROADMAP.md
+└── LICENSE
+```
 
-RepoEngineer is an open-source project, and contributions of all sizes are welcome!
+---
 
-Whether you're fixing bugs, improving documentation, adding new agents, or proposing new ideas, your help is appreciated.
+# ⚙️ Installation
 
-If you're new to open source, check out the issues labeled **good first issue**.
+Clone the repository.
 
-We'd love to build the future of AI Software Engineering together.
+```bash
+git clone https://github.com/<your-username>/RepoEngineer.git
+```
 
-⭐ If you find this project useful, consider starring the repository.
+Move into the project.
+
+```bash
+cd RepoEngineer
+```
+
+Create a virtual environment.
+
+```bash
+python -m venv venv
+```
+
+Activate the environment.
+
+### macOS / Linux
+
+```bash
+source venv/bin/activate
+```
+
+### Windows
+
+```powershell
+venv\Scripts\activate
+```
+
+Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file.
+
+```env
+ENDPOINT=
+GITAI_API_KEY=
+MODEL_NAME=gpt-4.1
+TEMPERATURE=0.2
+MAX_OUTPUT_TOKENS=4096
+```
+
+Run the project.
+
+```bash
+python -m app.main
+```
+
+---
+
+# 🗺 Roadmap
+
+## Phase 1 — Foundation
+
+- [x] Planner Agent
+- [x] LangGraph Integration
+- [x] GitHub Models
+- [x] Structured Outputs
+
+## Phase 2 — Repository Understanding
+
+- [ ] Repository Analyzer
+- [ ] Language Detection
+- [ ] Framework Detection
+- [ ] Package Manager Detection
+- [ ] Repository Tree Generation
+
+## Phase 3 — Context Awareness
+
+- [ ] Context Retrieval
+- [ ] Symbol Search
+- [ ] Semantic Search
+- [ ] Vector Memory
+
+## Phase 4 — Code Generation
+
+- [ ] Coding Agent
+- [ ] Patch Generation
+- [ ] File Editing
+
+## Phase 5 — Quality Assurance
+
+- [ ] Review Agent
+- [ ] Validation Agent
+- [ ] Test Generation
+
+## Phase 6 — GitHub Automation
+
+- [ ] Branch Creation
+- [ ] Commit Generation
+- [ ] Pull Request Creation
+
+---
+
+# 🤝 Contributing
+
+We welcome contributions from developers of all experience levels.
+
+You can contribute by:
+
+- Fixing bugs
+- Building new agents
+- Improving documentation
+- Writing tests
+- Enhancing architecture
+- Suggesting new ideas
+
+Please read **CONTRIBUTING.md** before opening an Issue or Pull Request.
+
+---
+
+# 💡 Project Vision
+
+RepoEngineer is designed to become a complete AI Software Engineer—not just a code generator.
+
+The goal is to create a system that can:
+
+- Understand large repositories
+- Plan implementation strategies
+- Retrieve relevant context
+- Generate high-quality code
+- Review its own work
+- Validate changes
+- Create production-ready Pull Requests
+
+through a modular, extensible multi-agent architecture.
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# ⭐ Support the Project
+
+If you find RepoEngineer useful:
+
+- ⭐ Star the repository
+- 🐛 Report bugs
+- 💡 Suggest features
+- 🤝 Contribute code
+- 📢 Share the project with others
+
+Every contribution helps make RepoEngineer a better AI Software Engineering platform.
+````
