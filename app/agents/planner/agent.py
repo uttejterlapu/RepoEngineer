@@ -1,5 +1,5 @@
-from app.models.planner_models import Plan
-from app.prompts.planner_prompt import SYSTEM_PROMPT
+from app.agents.planner.models import Plan
+from app.agents.planner.prompt import SYSTEM_PROMPT
 from app.llm.base import LLMClient
 
 class PlannerAgent:

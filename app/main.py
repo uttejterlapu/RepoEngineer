@@ -1,5 +1,5 @@
 from app.llm.openai_client import OpenAIClient
-from app.tool.github import GitHub
+from app.tools.github import GitHub
 from app.agents.planner import PlannerAgent
 from app.graph.workflow import graph
 
@@ -15,10 +15,12 @@ def main():
 
     result = graph.invoke(
         {
-            "user_request" : "Add JWT authentication"
+            "user_request" : "Add JWT authentication",
+            "repository_path": "/Users/uttejterlapu/projects/ai-agents/file-agent",
         }
     )
-    print(result["plan"])
+    # print(result["plan"])
+    # print(result["repository"].tree)
     # planner = PlannerAgent(OpenAIClient())
     # resp = planner.run("Add JWT authentication")
     # print(type(resp))

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional, Literal
+from typing import List, Literal
 
 class Task(BaseModel):
     id : int

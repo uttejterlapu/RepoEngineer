@@ -1,4 +1,4 @@
-from app.agents.planner import PlannerAgent
+from app.agents.planner.prompt import PlannerAgent
 from app.graph.state import WorkFlowState
 from app.llm.base import LLMClient
 
