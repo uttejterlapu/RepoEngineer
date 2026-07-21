@@ -1,5 +1,5 @@
 from pathlib import Path
-from app.agents.repository.detectors import Detector
+from app.agents.repository.detectors.detector import Detector
 
 class GitDetector(Detector):
     def detect(self, root: Path) -> bool:

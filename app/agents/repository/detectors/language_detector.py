@@ -1,6 +1,6 @@
 from collections import Counter
 from pathlib import Path
-from app.agents.repository.detectors import Detector
+from app.agents.repository.detectors.detector import Detector
 from app.agents.repository.models import Language
 
 class LanguageDetector(Detector):

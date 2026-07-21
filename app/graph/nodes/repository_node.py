@@ -8,7 +8,6 @@ class RepositoryNode:
         summary = self.agent.run(
             state["repository_path"]
         )
-        print(summary.package_manager)
         return {
             "repository":summary
         }

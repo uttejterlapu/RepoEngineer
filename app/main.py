@@ -1,6 +1,6 @@
 from app.llm.openai_client import OpenAIClient
 from app.tools.github import GitHub
-from app.agents.planner import PlannerAgent
+from app.agents.planner.agent import PlannerAgent
 from app.graph.workflow import graph
 
 def main():

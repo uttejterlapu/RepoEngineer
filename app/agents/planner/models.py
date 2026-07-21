@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel  # type: ignore[import]
 from typing import List, Literal
 
 class Task(BaseModel):
